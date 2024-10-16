@@ -3,7 +3,7 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import toast from 'react-hot-toast';
-
+import { Link } from 'react-router-dom';
 
 const Participate = () => {
     const { id } = useParams();
@@ -104,13 +104,16 @@ const Participate = () => {
 
                         {/* <h2 className="text-xl font-semibold mt-4 text-red-500">How to Register</h2> */}
 
-                        <a href={auth ? `/register/${details.event_name}/${details.nummember}/${details.fee}` : "/"}
+                        {/* <a href={auth ? `/register/${details.event_name}/${details.nummember}/${details.fee}` : "/"}
                             className="w-full text-center bg-red-600 text-white p-2 rounded hover:bg-red-700 transition duration-200 mb-4 mt-3"
                             type="submit"
                         >
                             Register
-                        </a>
-
+                        </a> */}
+                        <Link to={auth ? `/register/${details.event_name}/${details.nummember}/${details.fee}` : "/"}
+                            className="w-full text-center bg-red-600 text-white p-2 rounded hover:bg-red-700 transition duration-200 mb-4 mt-3"
+                            type="submit"
+                        > Register</Link>
                     </div>
                 </div>
 
