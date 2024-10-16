@@ -14,7 +14,7 @@ import verifyTeam from './teamVerify.js';
 import ForgetPass from './ForgetPass.js';
 import RedisStore from 'connect-redis';
 import redis from 'redis';
-import path from 'path';
+
 
 
 env.config();
@@ -389,8 +389,13 @@ app.post("/forget-password", async (req, res) => {
                 if (err) {
                     res.status(500).json("error hashing passowrd", err);
                 } else {
-                    res.status(200).json('verify');
-                    await ForgetPass(mail, hash);
+                    // res.status(200).json('verify');
+                    await ForgetPass(mail, hash).then(() => {
+                        res.status(200).json('verify');
+                    }).catch((err) => {
+                        res.status(err, "not passed")
+                    });
+
 
                 }
             });
