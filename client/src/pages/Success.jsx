@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Success = () => {
     const { teamName } = useParams();
@@ -14,11 +16,11 @@ const Success = () => {
                     <span className='text-white'>Join us on Discord for Further Information</span>
                     <a href='#' className='text-blue-600'>Discord Link</a>
                 </p>
-                <a
-                    href="/"
+                <Link
+                    to="/"
                     className="inline-block px-4 py-2 bg-white text-red-500 rounded hover:bg-gray-100 transition duration-300">
                     Back to HomePage
-                </a>
+                </Link>
             </div>
         </div>
     );
