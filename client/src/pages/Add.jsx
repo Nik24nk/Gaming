@@ -35,7 +35,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/addEvent", {
+            const response = await axios.post("https://gaming-6lc9.vercel.app/addEvent", {
                 addevent: eventData
             });
             console.log(response.data);

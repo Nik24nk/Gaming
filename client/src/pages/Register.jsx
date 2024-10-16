@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import toast from 'react-hot-toast';
 
@@ -165,7 +165,7 @@ const Register = () => {
         <>
 
             <div className="flex justify-center flex-col items-center h-screen bg-base-900">
-                <button className=' mt-2 bg-black text-white px-4 py-2 rounded-full mb-9'><a href='/'>back</a></button>
+                <button className=' mt-2 bg-black text-white px-4 py-2 rounded-full mb-9'><Link to='/'>back</Link></button>
                 <div className="w-full max-w-3xl p-8 space-y-6 bg-gray-800 rounded-lg shadow-md">
                     <h2 className="text-2xl font-bold text-center text-white">Register</h2>
                     <form className="space-y-4" onSubmit={validate ? already : paymentHandler}>

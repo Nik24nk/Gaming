@@ -100,16 +100,6 @@ const Participate = () => {
                             <p className="mb-2">All participants must adhere to the tournament rules and maintain good sportsmanship.</p>
 
                         </div>
-
-
-                        {/* <h2 className="text-xl font-semibold mt-4 text-red-500">How to Register</h2> */}
-
-                        {/* <a href={auth ? `/register/${details.event_name}/${details.nummember}/${details.fee}` : "/"}
-                            className="w-full text-center bg-red-600 text-white p-2 rounded hover:bg-red-700 transition duration-200 mb-4 mt-3"
-                            type="submit"
-                        >
-                            Register
-                        </a> */}
                         <Link to={auth ? `/register/${details.event_name}/${details.nummember}/${details.fee}` : "/"}
                             className="w-full text-center bg-red-600 text-white p-2 rounded hover:bg-red-700 transition duration-200 mb-4 mt-3"
                             type="submit"
