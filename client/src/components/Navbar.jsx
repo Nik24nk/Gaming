@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import Login from "../pages/Login"; // Import the Login component
 import Profile from './Profile';
 import axios from "axios"
-import flyingImage from './Flying.png';
+import logo from "./logo.png"
 
 
 
@@ -111,7 +111,7 @@ function Navbar() {
                                 {navItem}
                             </ul>
                         </div>
-                        <img src={flyingImage} alt="Flying" className="w-16 h-14" />
+                        <img src={logo} alt="Flying" className="w-16 h-14" />
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-center hidden lg:flex">
