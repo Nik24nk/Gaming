@@ -15,7 +15,7 @@ function Signup() {
         e.preventDefault();
         try {
             if (password === Confirmpassword) {
-                const response = await axios.post("http://localhost:5000/verify-email", {
+                const response = await axios.post("https://gaming-6lc9.vercel.app/verify-email", {
                     ema: email,
                     pas: password,
                 });

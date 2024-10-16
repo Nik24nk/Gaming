@@ -11,7 +11,7 @@ function ForgetPass() {
     async function update(e) {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/forget-password", {
+            const response = await axios.post("https://gaming-6lc9.vercel.app/forget-password", {
                 mail: mail,
                 pass: pass,
             });
