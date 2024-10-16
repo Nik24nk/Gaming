@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import toast from 'react-hot-toast';
-
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     // all Hooks
@@ -16,6 +16,7 @@ const Register = () => {
     });
     const [teamMemberVisible, setTeamMemberVisible] = useState(false);
     const [validate, setvalidate] = useState(false);
+    const navigate = useNavigate();
 
     // Event Participation Authentication..............
     useEffect(() => {
@@ -54,8 +55,8 @@ const Register = () => {
             console.log(response.data)
             toast.success("Event registration success")
             setvalidate(true)
-            window.location.href = `/success/${formData.TeamName}`
 
+            navigate(`/success/${formData.TeamName}`)
         } catch (error) {
             console.log(error);
         }

@@ -173,7 +173,7 @@ app.post("/verify-email", async (req, res) => {
 
 app.get("/signup/:ema/:pas", async (req, res) => {
     const { ema, pas } = req.params
-    res.render("./verification.ejs", { link: 'https://gaming-brown.vercel.app/' });
+    res.render("./verification.ejs", { link: 'https://gaming-1.onrender.com/' });
     try {
         const response = await db.query("SELECT * FROM members WHERE email=$1", [ema])
         const result = response.rows;
@@ -371,7 +371,7 @@ app.post("/eventMai", async (req, res) => {
 });
 
 app.get("/member-verify/:email", (req, res) => {
-    res.render("./teamverification.ejs", { link: 'https://gaming-brown.vercel.app/' });
+    res.render("./teamverification.ejs", { link: 'https://gaming-1.onrender.com/' });
 })
 
 app.post("/forget-password", async (req, res) => {
@@ -405,8 +405,8 @@ app.get("/change/:mail/:hash", async (req, res) => {
     console.log("change");
     try {
         await db.query("UPDATE members SET password=$1 WHERE email=$2", [hash, mail])
-        res.json("chnage")
-        res.render("./passverification.ejs", { link: 'https://gaming-brown.vercel.app/' });
+
+        res.render("./passverification.ejs", { link: 'https://gaming-1.onrender.com/' });
     } catch (error) {
 
         res.status(500).json(error)
