@@ -37,7 +37,7 @@ db.connect((err) => {
 });
 const app = express();
 const port = process.env.PORT;
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 // Middleware.............
 app.use(cors({
@@ -67,10 +67,10 @@ passport.use(passport.session());
 // Saltrounds for Salting......
 const saltrounds = Number(process.env.SALTVALUE)
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-})
+// app.use(express.static(path.join(__dirname, "/client/dist")));
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+// })
 
 
 // Payment....................................................
