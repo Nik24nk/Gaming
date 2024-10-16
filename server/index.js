@@ -389,9 +389,9 @@ app.post("/forget-password", async (req, res) => {
                 if (err) {
                     res.status(500).json("error hashing passowrd", err);
                 } else {
-
-                    await ForgetPass(mail, hash)
                     res.status(200).json('verify');
+                    await ForgetPass(mail, hash)
+
                 }
             });
         }
