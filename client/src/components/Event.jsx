@@ -13,7 +13,7 @@ function Event() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/");
+                const response = await axios.get("https://gaming-6lc9.vercel.app/");
                 const eventData = response.data;
                 setEvents(eventData);
             } catch (error) {

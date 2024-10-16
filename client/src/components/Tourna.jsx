@@ -46,7 +46,7 @@ function Tourna(props) {
     }
     async function Delete() {
         try {
-            const response = await axios.post("http://localhost:5000/delete", { id: props.id });
+            const response = await axios.post("https://gaming-6lc9.vercel.app/delete", { id: props.id });
             if (response.data === "Deleted") {
                 toast.success("delete successfully")
                 window.location.href = "/"
