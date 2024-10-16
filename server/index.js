@@ -67,12 +67,11 @@ passport.use(passport.session());
 // Saltrounds for Salting......
 const saltrounds = Number(process.env.SALTVALUE)
 
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, "/client/dist")));
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-//     })
-// }
+app.use(express.static(path.join(__dirname, "/client/dist")));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+})
+
 
 // Payment....................................................
 
