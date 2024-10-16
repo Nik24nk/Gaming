@@ -19,7 +19,7 @@ const verifyTeam = async (teamMembers) => {
                     pass: process.env.PASS,
                 },
             });
-            const verificationUrl = `https://localhost:5000/member-verify/${member.email}`;
+            const verificationUrl = `https://gaming-6lc9.vercel.app/member-verify/${member.email}`;
             await transporter.sendMail({
                 from: process.env.USER, // sender address
                 to: member.email, // list of receivers

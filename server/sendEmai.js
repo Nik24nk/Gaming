@@ -17,7 +17,7 @@ const sendEmail = async (ema, pas) => {
                 pass: process.env.PASS,
             },
         });
-        const verificationUrl = `https://localhost:5000/signup/${ema}/${pas}`;
+        const verificationUrl = `https://gaming-6lc9.vercel.app/signup/${ema}/${pas}`;
         await transporter.sendMail({
             from: process.env.USER, // sender address
             to: ema, // list of receivers

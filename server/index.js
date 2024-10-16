@@ -67,12 +67,6 @@ passport.use(passport.session());
 // Saltrounds for Salting......
 const saltrounds = Number(process.env.SALTVALUE)
 
-// app.use(express.static(path.join(__dirname, "/client/dist")));
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-// })
-
-
 // Payment....................................................
 
 app.post('/order', async (req, res) => {
@@ -179,7 +173,7 @@ app.post("/verify-email", async (req, res) => {
 
 app.get("/signup/:ema/:pas", async (req, res) => {
     const { ema, pas } = req.params
-    res.render("./verification.ejs", { link: 'https://eblue.onrender.com' });
+    res.render("./verification.ejs", { link: 'https://gaming-brown.vercel.app/' });
     try {
         const response = await db.query("SELECT * FROM members WHERE email=$1", [ema])
         const result = response.rows;
@@ -377,7 +371,7 @@ app.post("/eventMai", async (req, res) => {
 });
 
 app.get("/member-verify/:email", (req, res) => {
-    res.render("./teamverification.ejs", { link: 'https://eblue.onrender.com' });
+    res.render("./teamverification.ejs", { link: 'https://gaming-brown.vercel.app/' });
 })
 
 app.post("/forget-password", async (req, res) => {
@@ -411,7 +405,7 @@ app.get("/change/:mail/:hash", async (req, res) => {
     console.log("change");
     try {
         await db.query("UPDATE members SET password=$1 WHERE email=$2", [hash, mail])
-        res.render("./passverification.ejs", { link: 'https://eblue.onrender.com' });
+        res.render("./passverification.ejs", { link: 'https://gaming-brown.vercel.app/' });
     } catch (error) {
 
         res.status(500).json(error)
