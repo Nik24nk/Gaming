@@ -13,13 +13,13 @@ const ForgetPass = async (mail, hash) => {
             port: 587,
             secure: true,
             auth: {
-                user: "nickyuki014@gmail.com",
-                pass: "retk fxzk skyn vcsw",
+                user: process.env.USER,
+                pass: process.env.PASS,
             },
         });
         const verificationUrl = `https://gaming-6lc9.vercel.app/change/${mail}/${hash}`;
         await transporter.sendMail({
-            from: "nickyuki014@gmail.com", // sender address
+            from: process.env.USER, // sender address
             to: mail, // list of receivers
             subject: 'Password Verification', // Subject line
             text: `Please verify by clicking the following link: ${verificationUrl}`,

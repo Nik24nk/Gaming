@@ -405,6 +405,7 @@ app.get("/change/:mail/:hash", async (req, res) => {
     console.log("change");
     try {
         await db.query("UPDATE members SET password=$1 WHERE email=$2", [hash, mail])
+        res.json("chnage")
         res.render("./passverification.ejs", { link: 'https://gaming-brown.vercel.app/' });
     } catch (error) {
 
