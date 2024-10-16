@@ -17,7 +17,7 @@ const ForgetPass = async (mail, hash) => {
                 pass: process.env.PASS,
             },
         });
-        const verificationUrl = `https://gaming-6lc9.vercel.app/change/${mail}/${hash}`;
+        const verificationUrl = `https://gaming-l37t.onrender.com/change/${mail}/${hash}`;
         await transporter.sendMail({
             from: process.env.USER, // sender address
             to: mail, // list of receivers

@@ -32,7 +32,7 @@ const Participate = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const result = await axios.post("https://gaming-6lc9.vercel.app/participate", { Id: id });
+                const result = await axios.post("https://gaming-l37t.onrender.com/participate", { Id: id });
                 setDetails(result.data);
             } catch (error) {
                 console.error("Error fetching data:", error);

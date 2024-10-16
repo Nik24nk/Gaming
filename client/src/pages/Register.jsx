@@ -21,7 +21,7 @@ const Register = () => {
     useEffect(() => {
         async function auth() {
             try {
-                const response = await axios.post("https://gaming-6lc9.vercel.app/team-validate", {
+                const response = await axios.post("https://gaming-l37t.onrender.com/team-validate", {
                     LeaderEmail: formData.LeaderEmail,
                     Event_name: formData.Event_name
                 })
@@ -48,7 +48,7 @@ const Register = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await axios.post("https://gaming-6lc9.vercel.app/eventMai", {
+            const response = await axios.post("https://gaming-l37t.onrender.com/eventMai", {
                 formData
             });
             console.log(response.data)
@@ -69,7 +69,7 @@ const Register = () => {
     async function paymentHandler(e) {
         e.preventDefault();
         try {
-            const response = await axios.post("https://gaming-6lc9.vercel.app/order", {
+            const response = await axios.post("https://gaming-l37t.onrender.com/order", {
                 amount,
                 currency,
                 receipt: receiptId,
@@ -94,7 +94,7 @@ const Register = () => {
                     };
 
                     // Send the payment details to the backend for verification
-                    axios.post('https://gaming-6lc9.vercel.app/verify-payment', paymentDetails)
+                    axios.post('https://gaming-l37t.onrender.com/verify-payment', paymentDetails)
                         .then((res) => {
                             if (res.data.status === 'success') {
 

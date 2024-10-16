@@ -26,7 +26,7 @@ const Edit = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.post("https://gaming-6lc9.vercel.app/edit", { Id: id });
+                const response = await axios.post("https://gaming-l37t.onrender.com/edit", { Id: id });
                 const event = response.data;
 
                 // Populate form with fetched data
@@ -61,7 +61,7 @@ const Edit = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://gaming-6lc9.vercel.app/update", {
+            const response = await axios.post("https://gaming-l37t.onrender.com/update", {
                 addevent: eventData,
                 Id: id
             });

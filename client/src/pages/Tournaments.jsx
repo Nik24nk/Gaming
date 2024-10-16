@@ -12,7 +12,7 @@ function Tournaments() {
 
     useEffect(() => {
         async function getdata() {
-            const events = await axios.get("https://gaming-6lc9.vercel.app/");
+            const events = await axios.get("https://gaming-l37t.onrender.com/");
             const eventdata = events.data;
             setevents(eventdata);
         }
