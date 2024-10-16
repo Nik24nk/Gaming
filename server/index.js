@@ -391,7 +391,7 @@ app.post("/forget-password", async (req, res) => {
                 } else {
 
                     await ForgetPass(mail, hash)
-                    res.status(200).json('verify ho gya');
+                    res.status(200).json('verify');
                 }
             });
         }

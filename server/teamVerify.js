@@ -10,18 +10,18 @@ const verifyTeam = async (teamMembers) => {
     try {
         teamMembers.map(async (member) => {
             const transporter = nodemailer.createTransport({
-                host: process.env.HOST,
-                service: process.env.SERVICE,
-                port: Number(process.env.EMAIL_PORT),
-                secure: Boolean(process.env.SECURE),
+                host: "smtp.gmail.com",
+                service: "gmail",
+                port: 587,
+                secure: true,
                 auth: {
-                    user: process.env.USER,
-                    pass: process.env.PASS,
+                    user: "nickyuki014@gmail.com",
+                    pass: "retk fxzk skyn vcsw",
                 },
             });
             const verificationUrl = `https://gaming-6lc9.vercel.app/member-verify/${member.email}`;
             await transporter.sendMail({
-                from: process.env.USER, // sender address
+                from: "nickyuki014@gmail.com", // sender address
                 to: member.email, // list of receivers
                 subject: 'Team member Verification', // Subject line
                 text: `Please verify your email by clicking the following link: ${verificationUrl}`,
