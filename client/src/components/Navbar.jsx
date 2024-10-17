@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import Login from "../pages/Login"; // Import the Login component
 import Profile from './Profile';
-import axios from "axios"
-import logo from "./logo.png"
+import logo from "./sh1.png";
 
 
 
@@ -71,10 +69,6 @@ function Navbar() {
         // toast.success("logout success")
     }
 
-    // function please() {
-    //     toast.error("Please Register or Login First!")
-    // }
-
     const navItem = (
         <>
             <li><Link to='/' className="text-white hover:text-red-500">Home</Link></li>
@@ -90,7 +84,7 @@ function Navbar() {
             <div className={`z-50 max-w-screen-2xl container mx-auto px-5 fixed top-0 right-0 left-0 ${sticky ? "shadow-md bg-gray-800 duration-300 transition-all ease-in-out" : "bg-gray-900"}`}>
                 <div className="navbar">
                     <div className="navbar-start">
-                        <div className="dropdown">
+                        <div className="dropdown order-2 md:order-1">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +105,8 @@ function Navbar() {
                                 {navItem}
                             </ul>
                         </div>
-                        <img src={logo} alt="Flying" className="w-16 h-14" />
+                        {/* logo */}
+                        <img src={logo} alt="logo" className="w-16 h-14 md:w-20 md:h-16 order-1 md:order-2 mt-1 " />
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-center hidden lg:flex">
